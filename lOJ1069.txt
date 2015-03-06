@@ -1,0 +1,63 @@
+#include<iostream>
+#include<stdio.h>
+#include<string.h>
+#include<string>
+#include<stdlib.h>
+#include<math.h>
+#include<algorithm>
+#include<map>
+#define pi acos(0.0)
+using namespace std;
+int main()
+{
+    int t,i,j,k,l,time;
+    scanf("%d", &t);
+    for(j=1;j<=t;j++)
+    {
+        time=0;
+        scanf("%d %d", &i,&l);
+        if(l>=i&&i>0)
+        {
+           while(l!=i)
+        {
+            l--;
+            time=time+4;
+            //printf("current time %d\n", time);
+        }
+        time=time+11;
+        while(i!=0)
+        {
+            i--;
+            time=time+4;
+            //printf("current time %d\n", time);
+        }
+        time=time+8;
+        }
+        else if(l<i&&i>0)
+        {
+            while(l!=i)
+            {
+                l++;
+                time=time+4;
+            }
+            time=time+11;
+            while(i!=0)
+            {
+                i--;
+                time=time+4;
+            }
+            time=time+8;
+        }
+        else if(i==0&&l==0)
+        {
+           time=0;
+        }
+
+        printf("Case %d: %d\n", j,time);
+
+    }
+
+    return 0;
+}
+
+

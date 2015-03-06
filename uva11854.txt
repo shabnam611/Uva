@@ -1,0 +1,60 @@
+#include<iostream>
+#include<stdio.h>
+#include<string.h>
+#include<string>
+#include<stdlib.h>
+#include<math.h>
+#include<algorithm>
+#include<map>
+#define pi acos(0.0)
+using namespace std;
+int main()
+{
+    int t=1,i,j,k,l;
+    while(t==1)
+    {
+        scanf("%d %d %d", &i,&j,&k);
+        if(i==0&&j==0&&k==0)
+        {
+            t=0;
+            break;
+        }
+		else
+		{
+			if(k>i && k>j)
+			{
+				if(i*i+j*j==k*k)
+				{
+				    printf("right\n");
+                }
+				else
+				{
+				    printf("wrong\n");
+                }
+			}
+			else if(j>i&&j>k)
+			{
+			    if(i*i+k*k==j*j)
+			    {
+			        printf("right\n");
+			    }
+			    else
+				{
+				    printf("wrong\n");
+                }
+			}
+			else if(i>j&&i>k)
+			{
+			    if(j*j+k*k==i*i)
+			    {
+			        printf("right\n");
+			    }
+			    else
+			    {
+				    printf("wrong\n");
+                }
+			}
+		}
+    }
+    return 0;
+}

@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+    int tcase,ncase;
+    scanf("%d", &tcase);
+    for(ncase=1;ncase<=tcase;ncase++)
+    {
+        int n,p,q,j,ans=0,count=0,total=0;
+        scanf("%d %d %d", &n,&p,&q);
+        for(int i=1;i<=n;i++)
+        {
+            scanf("%d", &j);
+            count++;
+            if(count<=p)
+            {
+                ans=ans+j;
+                if(ans<=q)
+                {
+                    total++;
+                }
+            }
+        }
+        printf("Case %d: %d\n", ncase,total);
+    }
+}
+

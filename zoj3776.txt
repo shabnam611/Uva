@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<iostream>
+#include<algorithm>
+#include<string.h>
+#include<math.h>
+#include<stdlib.h>
+using namespace std;
+int main()
+{
+    int t,n,i,j,k,l,t1,t2,cal,ser;
+    scanf("%d", &n);
+    for(t=1;t<=n;t++)
+    {
+    t1=0;t2=0;
+    scanf("%d %d", &cal,&ser);
+    for(i=1;i<=cal;i++)
+    {
+        scanf("%d", &k);
+        t1=t1+k;
+    }
+    for(j=1;j<=ser;j++)
+    {
+        scanf("%d", &l);
+        t2=t2+l;
+    }
+    if(t1>t2)
+    {
+        printf("Calem\n");
+    }
+    else if(t1<t2)
+    {
+        printf("Serena\n");
+    }
+    else{printf("Draw\n");}
+    }
+    return 0;
+}
+
+

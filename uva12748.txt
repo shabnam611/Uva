@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<math.h>
+#include<string.h>
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+int main()
+{
+    int i,j,k,l,t,n,rx,ry,r,router,test,ans,temp[1000],dist;
+    scanf("%d", &n);
+    for(t=1;t<=n;t++)
+    {
+        scanf("%d %d", &router,&test);
+        l=0;
+        memset(temp,0,sizeof(temp));
+        for(i=1;i<=router;i++)
+        {
+            scanf("%d %d %d", &rx,&ry,&r); // prottekta router er obosthan ar eitar radius temp array te nitesi
+            temp[l]=rx;
+            l++;
+            temp[l]=ry;
+            l++;
+            temp[l]=r;
+            l++;
+        }
+        int p1,p2,flag;
+        printf("Case %d:\n",t);
+        for(int x=1;x<=test;x++) // eibar jotoguli durotto check korte hobe seiguli prottek jora test kortesi loop er maddhome
+        {
+            scanf("%d %d", &p1,&p2);
+            dist=0;
+            flag=0;
+            for(k=0;k<l;k+=3)
+            {
+               rx=temp[k];
+               ry=temp[k+1];
+               r=temp[k+2];
+               dist=(((p1-rx)*(p1-rx))+((p2-ry)*(p2-ry))); // prottek router er obosthaner sathe input er obosthan check kore       dektesi , tader router er moddhe pore ki na
+               if(dist<=(r*r))
+               {
+                   flag++; //porlei flag++
+                   if(flag==1)
+                   {
+                       printf("Yes\n");
+                    }//ekbar kono router er moddhe porlei yes ble dibo
+                   break;
+               }
+            }
+            if(flag==0) // ar jodi kono router er radius er cheyei choto na hoy taile flag 0 e thakbe....
+            {
+                printf("No\n");
+            }
+        }
+
+        }
+    }
+
